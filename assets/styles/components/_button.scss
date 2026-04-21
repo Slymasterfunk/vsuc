@@ -1,0 +1,40 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.15s var(--step), background 0.15s, color 0.15s, box-shadow 0.15s;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px color-mix(in oklab, var(--ink) 18%, transparent);
+  }
+
+  &.primary {
+    background: var(--ink);
+    color: var(--bg);
+
+    &:hover {
+      background: color-mix(in oklab, var(--ink) 85%, var(--accent));
+    }
+  }
+
+  &.big {
+    padding: 18px 28px;
+    font-size: 15px;
+  }
+}
+
+.kicker {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  font-weight: 600;
+}

@@ -1,0 +1,289 @@
+@use "../../assets/styles/abstracts" as *;
+
+/* C2 — Two tracks (Call / Write) */
+
+.ct-wrap { max-width: var(--max); margin: 0 auto; padding: 56px 28px 64px; }
+
+.contact-intro {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.contact-intro .kicker {
+  font-size: 11px; letter-spacing: 1.8px; text-transform: uppercase;
+  color: var(--ink-mute); font-weight: 600;
+}
+.contact-intro h2 {
+  font-family: var(--hand);
+  font-size: clamp(46px, 6vw, 64px);
+  line-height: 1;
+  margin: 8px 0 10px;
+  font-weight: 700;
+}
+.contact-intro p {
+  color: var(--ink-soft);
+  margin: 0 auto;
+  max-width: 54ch;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.two-tracks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+.track {
+  border: 1.5px solid var(--ink);
+  border-radius: 24px;
+  padding: 30px;
+  position: relative;
+}
+.track.call {
+  background: color-mix(in oklab, var(--brand-soft) 50%, var(--surface));
+}
+.track.write {
+  background: color-mix(in oklab, var(--accent-2) 26%, var(--surface));
+}
+
+.track .kicker {
+  font-size: 11px; letter-spacing: 1.6px; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+.track h3 {
+  font-family: var(--hand);
+  font-size: clamp(40px, 4.5vw, 52px);
+  line-height: 1;
+  margin: 8px 0 6px;
+  font-weight: 700;
+}
+.track .sub {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin: 0 0 18px;
+  line-height: 1.55;
+}
+
+/* Call track specifics */
+.track.call .phone {
+  font-family: var(--hand);
+  font-size: clamp(44px, 5vw, 56px);
+  line-height: 1;
+  margin: 10px 0 4px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.track.call .hours {
+  font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--ink-mute); font-weight: 600;
+}
+.track.call .book { margin-top: 24px; }
+.track.call .book h4 {
+  font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+  margin: 0 0 12px;
+}
+.slots-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.slot {
+  text-align: center;
+  padding: 12px 6px;
+  border: 1.5px solid var(--ink);
+  border-radius: 14px;
+  background: var(--surface);
+  cursor: pointer;
+  font-family: var(--sans);
+  color: var(--ink);
+  transition: transform 0.15s var(--step), background 0.15s, color 0.15s;
+}
+.slot strong { display: block; font-size: 13px; font-weight: 700; }
+.slot small {
+  display: block; font-size: 11px;
+  color: var(--ink-mute); margin-top: 2px;
+}
+.slot:hover { transform: translateY(-2px); }
+.slot.active {
+  background: var(--ink); color: var(--surface);
+  border-color: var(--ink);
+}
+.slot.active small { color: var(--surface); opacity: 0.75; }
+.track.call .confirm-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Write track specifics */
+.track.write form {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.fld {
+  border: 1.5px solid var(--ink);
+  border-radius: 14px;
+  background: var(--surface);
+  padding: 10px 14px;
+  transition: border-color 0.15s;
+}
+.fld:focus-within { border-color: var(--accent); }
+.fld label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.fld input, .fld textarea, .fld select {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--ink);
+  padding: 0;
+  resize: vertical;
+}
+.fld select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink-mute) 50%),
+    linear-gradient(135deg, var(--ink-mute) 50%, transparent 50%);
+  background-position: calc(100% - 14px) 50%, calc(100% - 9px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 22px;
+}
+.fld textarea { min-height: 70px; line-height: 1.5; }
+.fld.has-error { border-color: var(--accent); }
+.fld .chips-row {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-top: 8px;
+}
+.fld .chips-row button {
+  font-size: 11px; padding: 6px 12px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+  background: var(--surface);
+  cursor: pointer;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+}
+.fld .chips-row button:hover { background: var(--ink); color: var(--surface); }
+.fld .chips-row button.active {
+  background: var(--accent); color: var(--surface); border-color: var(--accent);
+}
+.send-row {
+  display: flex; justify-content: space-between;
+  align-items: center;
+  margin-top: 10px; gap: 16px;
+  flex-wrap: wrap;
+}
+.send-row .ccpa {
+  font-size: 10px; color: var(--ink-mute);
+  letter-spacing: 1px; text-transform: uppercase;
+  max-width: 60%; line-height: 1.5;
+  font-weight: 500;
+}
+.send-row .btn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.turnstile-row {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-start;
+}
+.turnstile-missing {
+  font-size: 11px;
+  color: var(--ink-mute);
+  font-family: var(--sans);
+  letter-spacing: 0.2px;
+  padding: 10px 12px;
+  border: 1.5px dashed var(--ink-mute);
+  border-radius: 12px;
+  line-height: 1.5;
+}
+.turnstile-missing code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  background: color-mix(in oklab, var(--ink) 8%, transparent);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.excluded-note {
+  margin-top: 4px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--accent) 14%, var(--surface));
+  border: 1.5px solid var(--accent);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.excluded-note strong { color: var(--accent); }
+.excluded-note a { color: var(--accent); text-decoration: underline; }
+
+.send-error {
+  margin-top: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--accent) 12%, var(--surface));
+  border: 1.5px solid var(--accent);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.send-success {
+  padding: 24px 4px 8px;
+}
+.send-success .kicker {
+  font-size: 11px; letter-spacing: 1.6px; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+.send-success h4 {
+  font-family: var(--hand);
+  font-size: clamp(36px, 4vw, 44px);
+  line-height: 1;
+  margin: 8px 0 10px;
+  font-weight: 700;
+}
+.send-success p {
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.state-notice {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--ink-mute);
+  font-weight: 600;
+}
+.state-notice strong { color: var(--accent); }
+.state-notice a { color: var(--accent); text-decoration: underline; }
+
+@include respond-to("desktop") {
+  .two-tracks { grid-template-columns: 1fr; }
+  .slots-grid { grid-template-columns: repeat(2, 1fr); }
+  .ct-wrap { padding: 32px 20px 48px; }
+  .field-row { grid-template-columns: 1fr; }
+}

@@ -4,25 +4,22 @@
 /node_modules
 /.pnp
 .pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
 
 # testing
 /coverage
+/test-results
+/playwright-report
+/.playwright-mcp
+/*.png
 
 # next.js
 /.next/
 /out/
 
-# production
-/build
-
 # misc
 .DS_Store
 *.pem
+*.log
 
 # debug
 npm-debug.log*
@@ -32,6 +29,15 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+
+# claude code (local-only settings)
+.claude/settings.local.json
+
+# local-only project notes (not deployed to vercel)
+AGENTS.md
+CLAUDE.md
+/docs
 
 # vercel
 .vercel
