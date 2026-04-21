@@ -87,7 +87,7 @@ export default function HomePage() {
             <div className="kicker">Not sure which door fits?</div>
             <h3>Talk to a human first.</h3>
             <p>
-              Ten minutes on the phone saves ten hours of guessing. No pressure — we&apos;ll tell you if we aren&apos;t
+              Ten minutes on the phone saves ten hours of guessing. No pressure, we&apos;ll tell you if we aren&apos;t
               the right fit.
             </p>
           </div>

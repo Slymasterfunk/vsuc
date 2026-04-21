@@ -368,8 +368,8 @@ export default function RatingPage() {
             <div className="kicker">Disability rating calculator</div>
             <h1>Estimate your VA combined rating.</h1>
             <p>
-              Add your conditions, dependents, and any special status. Results update live on the right —
-              using <strong>{RATE_YEAR} VA compensation rates</strong> (effective {EFFECTIVE_DATE}).
+              Add your conditions, dependents, and any special status. Results utilize{' '}
+               <strong>{RATE_YEAR} VA compensation rates</strong> (effective {EFFECTIVE_DATE}).
             </p>
           </div>
           <button type="button" className="btn reset-btn" onClick={resetAll}>
@@ -395,7 +395,7 @@ export default function RatingPage() {
 
               <div className="conditions-table">
                 {conditions.length === 0 ? (
-                  <div className="empty">No conditions yet — add one above.</div>
+                  <div className="empty">No conditions yet, add one above.</div>
                 ) : (
                   conditions.map((c) => (
                     <div className="condition-row" key={c.id}>
@@ -585,7 +585,7 @@ export default function RatingPage() {
                   />
                   <span>
                     Spouse needs Aid &amp; Attendance
-                    {!dependents.spouse && <em> — requires a spouse</em>}
+                    {!dependents.spouse && <em>, requires a spouse</em>}
                   </span>
                 </label>
               </fieldset>
@@ -593,7 +593,8 @@ export default function RatingPage() {
               <p className="smc-note">
                 <i className="fa-duotone fa-circle-info" aria-hidden="true" />
                 Veteran-level SMC (Aid &amp; Attendance, Housebound, loss-of-use) replaces the base
-                rating with a separate rate schedule and requires individual evaluation.{" "}
+                rating with a separate rate schedule and requires individual evaluation.
+                <br />
                 <Link href="/contact">Book a call</Link> and we&apos;ll walk through it.
               </p>
             </section>
@@ -674,7 +675,7 @@ export default function RatingPage() {
                   ))}
                 </div>
                 <p className="math-note">
-                  VA combined-rating math — ordered high to low, each condition reduces the remaining &ldquo;healthy&rdquo; efficiency.
+                  VA combined-rating math, ordered high to low, each condition reduces the remaining &ldquo;healthy&rdquo; efficiency.
                 </p>
               </details>
             )}
